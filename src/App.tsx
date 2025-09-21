@@ -4,7 +4,7 @@ import ImageGeneration from "./pages/ImageGeneration";
 import EraseElement from "./pages/EraseElement";
 import GenFill from "./pages/GenFill";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import GenBackground from "./pages/GenBackground";
+import ReplaceBackground from "./pages/ReplaceBackground";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/hd-image" element={<ImageGeneration />} />
           <Route path="/gen-fill" element={<GenFill />} />
           <Route path="/erase-element" element={<EraseElement />} />
-          <Route path="/gen-bg" element={<GenBackground />} />
+          <Route path="/replace-bg" element={<ReplaceBackground />} />
         </Route>
       </Routes>
     </QueryClientProvider>

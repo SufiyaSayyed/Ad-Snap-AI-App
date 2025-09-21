@@ -5,7 +5,7 @@ const pageTitles: Record<string, string> = {
   "/hd-image": "Generative HD Images",
   "/gen-fill": "Generative fill",
   "/erase-element": "Erase Elements",
-  "/gen-bg": "Generate Background",
+  "/replace-bg": "Replace Background",
 };
 
 const MainLayout = () => {
@@ -47,13 +47,13 @@ const MainLayout = () => {
             Erase Elements
           </Link>
           <Link
-            to="/gen-bg"
+            to="/replace-bg"
             className={cn(
               "px-3 py-2 rounded-lg hover:bg-gray-700",
               location.pathname === "/gen-bg" && "bg-gray-700"
             )}
           >
-            Generate Background
+            Replace Background
           </Link>
         </nav>
       </div>

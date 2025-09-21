@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { eraseElement } from "@/lib/api/briaApi";
-import type { eraseElementRequest } from "@/lib/api/requestTypes";
+import type { EraseElementRequest } from "@/lib/api/requestTypes";
 import { useMutation } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
@@ -139,7 +139,7 @@ const EraseElement = () => {
       return;
     }
 
-    const eraseElementRequest: eraseElementRequest = {
+    const eraseElementRequest: EraseElementRequest = {
       image: originalImgBase64,
       mask: maskedImgbase64,
       sync: true,

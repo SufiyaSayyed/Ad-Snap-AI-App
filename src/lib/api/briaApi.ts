@@ -1,8 +1,9 @@
 import { client } from "./config";
 import type {
-  eraseElementRequest,
+  EraseElementRequest,
   GenFillImgRequest,
   ImageGenRequest,
+  ReplaceBgReuqest,
 } from "./requestTypes";
 
 // const modelVersion = "2.2";
@@ -52,7 +53,7 @@ export const generateFillImage = async (
 };
 
 export const eraseElement = async (
-  eraseElementRequest: eraseElementRequest
+  eraseElementRequest: EraseElementRequest
 ) => {
   console.log("eraseElementRequest: ", eraseElementRequest);
   try {
@@ -64,6 +65,21 @@ export const eraseElement = async (
     return response.data;
   } catch (error) {
     console.log("eraseElement api call error: ", error);
+    throw error;
+  }
+};
+
+export const replaceBackground = async (replaceBgReuqest: ReplaceBgReuqest) => {
+  console.log("replaceBgReuqest: ", replaceBgReuqest);
+  try {
+    const response = await client.post(
+      "/v2/image/edit/replace_background",
+      replaceBgReuqest
+    );
+    console.log("replaceBgResponse: ", response);
+    return response.data;
+  } catch (error) {
+    console.log("replaceBg api call error: ", error);
     throw error;
   }
 };

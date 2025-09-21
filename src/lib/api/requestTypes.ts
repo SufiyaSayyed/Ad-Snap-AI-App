@@ -37,9 +37,16 @@ export interface GenFillImgRequest {
   mask_type: string;
 }
 
-export interface eraseElementRequest {
+export interface EraseElementRequest {
   image: string;
   mask: string;
   sync: boolean;
   mask_type: string;
+}
+
+export interface ReplaceBgReuqest {
+  image: string;
+  prompt: string;
+  mode: string;
+  sync: boolean;
 }
