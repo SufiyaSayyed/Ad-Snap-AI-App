@@ -33,7 +33,13 @@ export interface GenFillImgRequest {
   image: string;
   mask: string;
   prompt: string;
-  negative_prompt?: string;
+  sync: boolean;
+  mask_type: string;
+}
+
+export interface eraseElementRequest {
+  image: string;
+  mask: string;
   sync: boolean;
   mask_type: string;
 }

@@ -14,7 +14,6 @@ const GenFill = () => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [brushSize, SetBrushSize] = useState(30);
   const [prompt, setPrompt] = useState("");
-  const [negativePrompt, setNegativePrompt] = useState("");
   const [recievedImg, setRecievedImage] = useState("");
 
   useEffect(() => {
@@ -26,8 +25,8 @@ const GenFill = () => {
       const maskCanvas = maskCanvasRef.current;
       if (!imageCanvas || !maskCanvas) return;
 
-      const MAX_WIDTH = 200;
-      const MAX_HEIGHT = 200;
+      const MAX_WIDTH = 800;
+      const MAX_HEIGHT = 800;
 
       let { width, height } = img;
 
@@ -115,7 +114,7 @@ const GenFill = () => {
   };
 
   const {
-    mutate: genFillImage,
+    mutate: genFillImageFn,
     isPending: isGenFillImagePending,
     data: genFillImageData,
     isSuccess: isGenFillImageSuccess,
@@ -126,7 +125,6 @@ const GenFill = () => {
     onSuccess: (data) => {
       setRecievedImage(data.result.image_url);
       setPrompt("");
-      setNegativePrompt("");
       setImageFile(null);
     },
   });
@@ -149,12 +147,11 @@ const GenFill = () => {
       image: originalImgBase64,
       mask: maskedImgbase64,
       prompt: prompt,
-      //   negative_prompt: negativePrompt && negativePrompt,
       sync: true,
       mask_type: "manual",
     };
     console.log(genFillImageRequest);
-    genFillImage(genFillImageRequest);
+    genFillImageFn(genFillImageRequest);
   };
 
   return (
@@ -211,13 +208,6 @@ const GenFill = () => {
               value={prompt}
               placeholder="Enter your prompt"
               onChange={(e) => setPrompt(e.target.value)}
-            />
-            <h1 className="mb-3">Negative Prompt</h1>
-            <Textarea
-              className="p-4 mb-6"
-              value={negativePrompt}
-              placeholder="Enter your negative prompt"
-              onChange={(e) => setNegativePrompt(e.target.value)}
             />
             <Button
               className="mb-5"
