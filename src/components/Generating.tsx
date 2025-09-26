@@ -1,4 +1,3 @@
-import React from "react";
 import loading from "../assets/loading.png";
 
 const Generating = ({ className }: { className: string }) => {
