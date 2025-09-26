@@ -155,43 +155,58 @@ const GenFill = () => {
   };
 
   return (
-    <div className="p-4">
-      <p className="mb-5">
-        Draw a mask on the image and describe what you want to generate in that
-        area
-      </p>
-      <label htmlFor="file-upload" className="bg-gray-800 px-6 py-3 rounded-xl">
-        Upload Image
-      </label>
-      <input
-        id="file-upload"
-        type="file"
-        className="hidden"
-        accept="image/*"
-        onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-      />
-      <div className="p-4 grid grid-cols-3 gap-10">
-        {imageFile && (
-          <div className="relative inline-block col-span-2">
-            <canvas ref={imageCanvasRef} />
-            <canvas
-              ref={maskCanvasRef}
-              className="absolute top-0 left-0 cursor-crosshair"
-              onMouseDown={startDrawing}
-              onMouseUp={endDrawing}
-              onMouseOut={endDrawing}
-              onMouseMove={draw}
-            />
+    <div className="w-full">
+      <div className="mb-8 text-center md:text-left">
+        <p className="text-2xl font-bold mb-2">Generative Fill Area</p>
+        <p className="font-grotesk font-semibold">
+          Draw a mask on the image and describe what you want to generate in
+          that area!
+        </p>
+      </div>
+
+      <div className="mb-6 flex justify-center md:justify-start">
+        <label
+          htmlFor="file-upload"
+          className="bg-p-4  border border-border-2 hover:bg-p-1 px-6 py-3 rounded-xl"
+        >
+          Upload Image
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          className="hidden"
+          accept="image/*"
+          onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+        />
+      </div>
+
+      <div className="p-4 grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {(imageFile || isGenFillImageSuccess) && (
+          <div className="relative inline-block lg:col-span-2 flex justify-center">
+            {imageFile && (
+              <div className="relative w-full max-w-[800px]">
+                <canvas ref={imageCanvasRef} className="w-full h-auto" />
+                <canvas
+                  ref={maskCanvasRef}
+                  className="absolute top-0 left-0 w-full h-auto cursor-crosshair"
+                  onMouseDown={startDrawing}
+                  onMouseUp={endDrawing}
+                  onMouseOut={endDrawing}
+                  onMouseMove={draw}
+                />
+              </div>
+            )}
+            {isGenFillImageSuccess && genFillImageData && (
+              <div className="relative w-full max-w-[800px]">
+                <img src={recievedImg} alt="" className="w-full h-auto" />
+              </div>
+            )}
           </div>
         )}
-        {isGenFillImageSuccess && genFillImageData && (
-          <div className="relative inline-block col-span-2">
-            <img src={recievedImg} alt="" />
-          </div>
-        )}
+
         {(imageFile || recievedImg) && (
-          <div>
-            <h1 className="mb-3">Brush Size</h1>
+          <div className="flex flex-col">
+            <p className="font-semibold text-xl mb-4">Brush Size</p>
             <Slider
               className="mb-8"
               min={5}
@@ -199,10 +214,10 @@ const GenFill = () => {
               value={[brushSize]}
               onValueChange={(value) => SetBrushSize(Number(value[0]))}
             />
-            <Button className="mb-5" onClick={clearMask}>
+            <Button className="mb-5 w-min" onClick={clearMask}>
               Reset Mask
             </Button>
-            <h1 className="mb-3">Prompt (requried)</h1>
+            <p className="font-semibold text-xl mb-4">Prompt (requried)</p>
             <Textarea
               className="p-4 mb-6"
               value={prompt}
@@ -210,7 +225,7 @@ const GenFill = () => {
               onChange={(e) => setPrompt(e.target.value)}
             />
             <Button
-              className="mb-5"
+              className="mb-5 w-min"
               onClick={submitToGenFill}
               disabled={isGenFillImagePending}
             >

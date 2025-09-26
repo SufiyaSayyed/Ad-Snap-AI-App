@@ -15,7 +15,7 @@ const Hero = () => {
         <h1 className="mb-6">Your AI Art Playground</h1>
         <p className="body-1 text-2xl max-w-3xl mx-auto mb-6 text-border-2 lg:mb-8">
           From prompts to polished photos — generate, enhance, and edit your
-          images with ease using Crezia
+          images with ease using FableAI
         </p>
         <button
           onClick={() => navigate("/playground")}
@@ -35,7 +35,7 @@ const Hero = () => {
           />
 
           <ScrollParallax isAbsolutelyPositioned>
-            <p className="font-code text-border-3 text-3xl absolute left-0 right-0 mx-auto bottom-90 md:left-1/2 md:right-auto md:bottom-110 md:-translate-x-1/2 text-center">
+            <p className="font-code text-border-3 text-3xl absolute left-0 right-0 mx-auto bottom-80 md:left-1/2 md:right-auto md:bottom-110 md:-translate-x-1/2 text-center">
               PROMPT
             </p>
           </ScrollParallax>
@@ -45,12 +45,12 @@ const Hero = () => {
               src={innerImage}
               width={300}
               height={200}
-              className="absolute rounded-[2rem] border-2 border-border-3 left-0 right-0 mx-auto bottom-25 md:left-1/2 md:right-auto md:bottom-30  md:w-[25rem] md:h-[18rem] md:-translate-x-1/2"
+              className="absolute rounded-[2rem] border-2 border-border-3 left-0 right-0 mx-auto bottom-20 md:left-1/2 md:right-auto md:bottom-30  md:w-[25rem] md:h-[18rem] md:-translate-x-1/2"
             />
           </ScrollParallax>
 
           <ScrollParallax isAbsolutelyPositioned>
-            <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+            <Generating className="absolute left-4 right-4 bottom-1 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
           </ScrollParallax>
         </div>
       </div>
