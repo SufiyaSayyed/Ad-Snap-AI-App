@@ -5,7 +5,7 @@ import { replaceBackground } from "@/lib/api/briaApi";
 import type { ReplaceBgReuqest } from "@/lib/api/requestTypes";
 import { useMutation } from "@tanstack/react-query";
 import { Settings, Square, Zap } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 const ReplaceBackground = () => {
