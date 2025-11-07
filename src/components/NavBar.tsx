@@ -1,27 +1,35 @@
-import { Sparkles } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-
 const NavBar = () => {
-  const navigate = useNavigate();
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-p-8/90 backdrop-blur-sm border-b border-p-4">
-      <div className="flex items-center justify-between r px-5 lg:px-7.5 xl:px-10 md:py-2 py-4 lg:py-2">
-        <a href="/" className="block w-[12rem] xl:m-2">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6366f1]">
-              <Sparkles className="h-4 w-4 text-white" />
-            </div>
-            <span className="text-lg font-semibold text-white">ImagineAI</span>
+    <nav
+      className="
+        fixed top-4 left-1/2 -translate-x-1/2
+        z-50 flex items-center justify-between
+        backdrop-blur-xl bg-secondary/80
+        border-muted-foreground/30 border
+        rounded-full shadow-lg
+        px-6 py-3 md:px-8 md:py-3
+        w-[90%] max-w-5xl
+      "
+    >
+      <a href="/" className="block">
+        <div className="flex items-center gap-2">
+          <div className="flex h-6 w-6 items-center justify-center">
+            <img src="/logo_1.svg" />
           </div>
+          <span className="text-lg font-semibold text-foreground">
+            ImagineAI
+          </span>
+        </div>
+      </a>
+      <div className="flex items-center gap-8">
+        <a href="/" className="md:block hidden">
+          <span className="text-primary-foreground">Features</span>
         </a>
-        <button
-          onClick={() => navigate("/playground")}
-          className="font-grotesk bg-p-5 border border-border-2 text-n-1 rounded-full px-4 py-1 cursor-pointer hover:bg-p-7"
-        >
-          Create
-        </button>
+        <a href="/playground" className="block">
+          <span className="text-primary-foreground">Create</span>
+        </a>
       </div>
-    </div>
+    </nav>
   );
 };
 

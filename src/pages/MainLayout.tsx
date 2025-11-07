@@ -58,8 +58,15 @@ const MainLayout = () => {
       {/* Sidebar (Desktop only) */}
       <div className="hidden md:flex w-64 bg-p-8 text-n-1 flex-col border-r border-p-4">
         <div className="py-3 text-xl font-semibold flex justify-center items-center border-b border-p-4">
-          <a href="/" className="block xl:m-2">
-            <img src={Logo} alt="logo" width={140} height={40} />
+          <a href="/" className="block">
+            <div className="flex items-center gap-2">
+              <div className="flex h-6 w-6 items-center justify-center">
+                <img src="/logo_1.svg" />
+              </div>
+              <span className="text-lg font-semibold text-foreground">
+                ImagineAI
+              </span>
+            </div>
           </a>
         </div>
         <nav className="flex flex-col gap-2 p-4">

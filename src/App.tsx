@@ -8,6 +8,7 @@ import ReplaceBackground from "./pages/ReplaceBackground";
 import Hero from "./pages/Hero";
 import NavBar from "./components/NavBar";
 import PlaygroundInfo from "./pages/PlaygroundInfo";
+import Features from "./pages/Features";
 
 const queryClient = new QueryClient();
 
@@ -18,9 +19,10 @@ function App() {
         <Route
           path="/"
           element={
-            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+            <div className="overflow-hidden">
               <NavBar />
               <Hero />
+              <Features />
             </div>
           }
         />

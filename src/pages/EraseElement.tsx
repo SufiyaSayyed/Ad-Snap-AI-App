@@ -176,7 +176,7 @@ const EraseElement = () => {
 
       <div className="p-4 grid grid-cols-1 lg:grid-cols-3 gap-10">
         {(imageFile || isEraseElementSuccess) && (
-          <div className="relative inline-block lg:col-span-2 flex justify-center">
+          <div className="relative lg:col-span-2 flex justify-center">
             {imageFile && (
               <div className="relative w-full max-w-[800px]">
                 <canvas ref={imageCanvasRef} className="w-full h-auto" />
