@@ -15,7 +15,7 @@ const Hero = () => {
         <h1 className="mb-6">Your AI Art Playground</h1>
         <p className="body-1 text-2xl max-w-3xl mx-auto mb-6 text-border-2 lg:mb-8">
           From prompts to polished photos — generate, enhance, and edit your
-          images with ease using FableAI
+          images with ease using ImageAI
         </p>
         <button
           onClick={() => navigate("/playground")}

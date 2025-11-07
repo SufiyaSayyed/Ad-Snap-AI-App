@@ -1,4 +1,4 @@
-import Logo from "../assets/logo2.svg";
+import { Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -7,7 +7,12 @@ const NavBar = () => {
     <div className="fixed top-0 left-0 w-full z-50 bg-p-8/90 backdrop-blur-sm border-b border-p-4">
       <div className="flex items-center justify-between r px-5 lg:px-7.5 xl:px-10 md:py-2 py-4 lg:py-2">
         <a href="/" className="block w-[12rem] xl:m-2">
-          <img src={Logo} alt="logo" width={140} height={40} />
+          <div className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#6366f1]">
+              <Sparkles className="h-4 w-4 text-white" />
+            </div>
+            <span className="text-lg font-semibold text-white">ImagineAI</span>
+          </div>
         </a>
         <button
           onClick={() => navigate("/playground")}
