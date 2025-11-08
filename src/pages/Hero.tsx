@@ -1,13 +1,24 @@
 import LightRays from "@/components/LightRays";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }} // Initial state
+      animate={{ opacity: 1, scale: 1 }} // Animated state
+      transition={{ duration: 0.5 }} // Animation duration
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* 🌌 Background Layer */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }} // Initial state
+        animate={{ opacity: 1, scale: 1 }} // Animated state
+        transition={{ duration: 0.5 }} // Animation duration
+        className="absolute inset-0 z-0"
+      >
         <LightRays
           raysOrigin="top-center"
           raysColor="#73B6F9"
@@ -22,9 +33,10 @@ const Hero = () => {
           saturation={1}
           fadeDistance={0.8}
         />
-      </div>
+      </motion.div>
 
       {/* 🌟 Content Layer */}
+
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
           Your AI Art Playground
@@ -41,8 +53,10 @@ const Hero = () => {
         >
           Get Started
         </Button>
+
+        {/* <DisperseImages /> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

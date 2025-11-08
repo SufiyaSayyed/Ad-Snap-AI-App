@@ -9,6 +9,7 @@ import Hero from "./pages/Hero";
 import NavBar from "./components/NavBar";
 import PlaygroundInfo from "./pages/PlaygroundInfo";
 import Features from "./pages/Features";
+import Hero2 from "./pages/Hero2";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ function App() {
             <div className="overflow-hidden">
               <NavBar />
               <Hero />
+              {/* <Hero2 /> */}
               <Features />
             </div>
           }
