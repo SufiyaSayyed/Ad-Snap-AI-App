@@ -52,7 +52,10 @@ const DisperseImages: React.FC = () => {
   const scaleTransforms = [scale0, scale1, scale2, scale3, scale4];
 
   return (
-    <div ref={ref} className="">
+    <div
+      ref={ref}
+      className="relative w-full h-screen flex justify-center items-center overflow-hidden"
+    >
       {/* Central Image */}
       <motion.img
         src={centralImage}

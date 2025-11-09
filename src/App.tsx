@@ -23,7 +23,7 @@ function App() {
             <div className="overflow-hidden">
               <NavBar />
               <Hero />
-              {/* <Hero2 /> */}
+              <Hero2 />
               <Features />
             </div>
           }
