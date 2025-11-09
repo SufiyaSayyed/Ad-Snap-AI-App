@@ -7,8 +7,8 @@ const NavBar = () => {
         backdrop-blur-xl bg-secondary/80
         border-muted-foreground/30 border
         rounded-full shadow-lg
-        px-6 py-3 md:px-8 md:py-3
-        w-[90%] max-w-5xl
+        px-6 py-3 md:px-8 mt-4 md:mt-0 md:py-3
+        w-[90%] max-w-5xl 
       "
     >
       <a href="/" className="block">

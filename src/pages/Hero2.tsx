@@ -1,7 +1,7 @@
-import DisperseImages from "@/components/DisperseImages";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const Hero2 = () => {
-  return <DisperseImages />;
+  return <ImageCarousel />;
 };
 
 export default Hero2;

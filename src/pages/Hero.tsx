@@ -2,21 +2,23 @@ import LightRays from "@/components/LightRays";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const Hero = () => {
   const navigate = useNavigate();
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }} // Initial state
-      animate={{ opacity: 1, scale: 1 }} // Animated state
-      transition={{ duration: 0.5 }} // Animation duration
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+      className="my-10 relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* 🌌 Background Layer */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }} // Initial state
-        animate={{ opacity: 1, scale: 1 }} // Animated state
-        transition={{ duration: 0.5 }} // Animation duration
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
         className="absolute inset-0 z-0"
       >
         <LightRays
@@ -36,28 +38,34 @@ const Hero = () => {
       </motion.div>
 
       {/* 🌟 Content Layer */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10 gap-6">
+        {/* Heading */}
+        <div>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+            Your AI Art Playground
+          </h1>
 
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-          Your AI Art Playground
-        </h1>
+          <p className="text-base md:text-lg mb-6 max-w-xl mx-auto">
+            From prompts to polished photos — generate, enhance, and edit your
+            images with ease using{" "}
+            <span className="font-semibold">ImageAI</span>.
+          </p>
+        </div>
 
-        <p className="text-base md:text-lg mb-6 max-w-xl">
-          From prompts to polished photos — generate, enhance, and edit your
-          images with ease using <span className="font-semibold">ImageAI</span>.
-        </p>
+        {/* Carousel Above Button */}
+        <div className="w-full flex justify-center mb-6">
+          <div className="w-[80%] md:w-[60%]">
+            <ImageCarousel />
+          </div>
+        </div>
 
+        {/* Button */}
         <Button
           onClick={() => navigate("/playground")}
           className="px-6 py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition"
         >
           Get Started
         </Button>
-        {/* <iframe
-          src="https://my.spline.design/untitled-kfSAb9O7ltnv2vJvbVkdoLs0-E5A/"
-          width="100%"
-          height="100%"
-        ></iframe> */}
       </div>
     </motion.div>
   );
