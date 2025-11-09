@@ -8,7 +8,7 @@ import ReplaceBackground from "./pages/ReplaceBackground";
 import Hero from "./pages/Hero";
 import NavBar from "./components/NavBar";
 import PlaygroundInfo from "./pages/PlaygroundInfo";
-import Features from "./pages/Features";
+import Tools from "./pages/Tools";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +23,7 @@ function App() {
               <NavBar />
               <Hero />
               {/* <Hero2 /> */}
-              <Features />
+              <Tools />
             </div>
           }
         />
