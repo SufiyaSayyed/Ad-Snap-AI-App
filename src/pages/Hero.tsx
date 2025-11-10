@@ -38,7 +38,7 @@ const Hero = () => {
       </motion.div>
 
       {/* 🌟 Content Layer */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10 gap-6 pt-10 md:pt-40">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10 gap-6 pt-40 md:pt-40">
         {/* Heading */}
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
