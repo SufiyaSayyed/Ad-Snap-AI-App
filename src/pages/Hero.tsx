@@ -48,7 +48,7 @@ const Hero = () => {
           <p className="text-base md:text-lg mb-6 max-w-xl mx-auto">
             From prompts to polished photos — generate, enhance, and edit your
             images with ease using{" "}
-            <span className="font-semibold">ImageAI</span>.
+            <span className="font-semibold">ImagineAI</span>.
           </p>
         </div>
 
