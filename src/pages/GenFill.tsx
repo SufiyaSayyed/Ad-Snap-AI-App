@@ -167,7 +167,7 @@ const GenFill = () => {
       <div className="mb-6 flex justify-center md:justify-start">
         <label
           htmlFor="file-upload"
-          className="bg-p-4  border border-border-2 hover:bg-p-1 px-6 py-3 rounded-xl"
+          className="bg-primary border border-border-2 hover:bg-secondary-foreground hover:text-accent-foreground px-6 py-3 rounded-xl"
         >
           Upload Image
         </label>
@@ -182,7 +182,7 @@ const GenFill = () => {
 
       <div className="p-4 grid grid-cols-1 lg:grid-cols-3 gap-10">
         {(imageFile || isGenFillImageSuccess) && (
-          <div className="relative inline-block lg:col-span-2 flex justify-center">
+          <div className="relative lg:col-span-2 flex justify-center">
             {imageFile && (
               <div className="relative w-full max-w-[800px]">
                 <canvas ref={imageCanvasRef} className="w-full h-auto" />

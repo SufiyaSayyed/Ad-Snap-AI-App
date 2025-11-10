@@ -257,7 +257,7 @@ const ImageGeneration = () => {
                         download={`image_${idx}_${index}.png`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-2 px-3 py-1 text-sm bg-p-4 text-white border border-border-2 hover:bg-p-1 bg rounded-lg"
+                        className="mt-2 px-3 py-1 text-sm bg-primary text-white border border-border-2 hover:bg-secondary-foreground hover:text-accent-foreground rounded-lg"
                       >
                         Download
                       </a>

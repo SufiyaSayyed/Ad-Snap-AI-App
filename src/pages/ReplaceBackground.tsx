@@ -66,7 +66,7 @@ const ReplaceBackground = () => {
       <div className="mb-6 flex justify-center md:justify-start">
         <label
           htmlFor="file-upload"
-          className="bg-p-4  border border-border-2 hover:bg-p-1 px-6 py-3 rounded-xl"
+          className="bg-primary border border-border-2 hover:bg-secondary-foreground hover:text-accent-foreground px-6 py-3 rounded-xl"
         >
           Upload Image
         </label>
