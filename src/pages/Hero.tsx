@@ -12,7 +12,7 @@ const Hero = () => {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6 }}
-      className="my-10 relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen overflow-hidden"
     >
       {/* 🌌 Background Layer */}
       <motion.div
@@ -38,7 +38,7 @@ const Hero = () => {
       </motion.div>
 
       {/* 🌟 Content Layer */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10 gap-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-10 gap-6 pt-10 md:pt-40">
         {/* Heading */}
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
